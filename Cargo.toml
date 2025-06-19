@@ -1,0 +1,42 @@
+[package]
+name = "rnm-rs"
+version = "0.1.0"
+edition = "2021"
+authors = ["zhuima314@gmail.com"]
+description = "A simple Node.js version manager, written in Rust"
+license = "MIT"
+
+
+[dependencies]
+# 命令行
+clap = { version = "4.4", features = ["derive", "cargo", "color"] }
+anstyle = "1.0"
+
+# 异步运行时
+tokio = { version = "1.35", features = ["full"] }
+
+# HTTP 客户端
+reqwest = { version = "0.11", features = ["stream"] }
+
+# HTML 解析
+scraper = "0.18"
+
+# 进度条
+indicatif = "0.17"
+
+# 解压缩
+flate2 = "1.0"
+tar = "0.4"
+zip = "0.6"
+
+# 错误处理
+thiserror = "1.0.57"
+
+# 获取 Home 目录
+home = "0.5"
+
+# 版本号处理
+semver = "1.0"
+
+# 临时文件处理
+tempfile = "3.10"
