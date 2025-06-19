@@ -1,14 +1,17 @@
 use clap::{Parser, Subcommand};
 use anstyle::{AnsiColor, Color, Style};
 
-
+const ORANGE: &str = "\x1b[38;5;208m";
+const YELLOW: &str = "\x1b[1;38;5;226m";
+const PINK: &str = "\x1b[1;38;5;219m";
+const RESET: &str = "\x1b[0m";
 
 const FULL_HELP_MESSAGE: &str = "For more information, visit: https://github.com/zhuima/rnm\n\
     \n\
-    \x1b[38;5;208m┌──────────────────────────────────────────────────────────────────────────────────────┐\x1b[0m\n\
-    \x1b[38;5;208m│\x1b[0m               \x1b[1;38;5;226m✨ 本工具由 oomol.com 赞助的 OOMOL_Studio 强力驱动 ✨\x1b[0m\x1b[38;5;208m│\x1b[0m\n\
-    \x1b[38;5;208m│\x1b[0m                        \x1b[1;38;5;219mhttps://oomol.com/！\x1b[0m\x1b[38;5;208m│\x1b[0m\n\
-    \x1b[38;5;208m└──────────────────────────────────────────────────────────────────────────────────────┘\x1b[0m\n";
+    \x1b[38;5;208m┌──────────────────────────────────────────────────┐\x1b[0m\n\
+    \x1b[38;5;208m│\x1b[0m  \x1b[1;38;5;226m✨ 本工具由 oomol.com 赞助的 OOMOL_Studio 强力驱动 ✨\x1b[0m  \x1b[38;5;208m│\x1b[0m\n\
+    \x1b[38;5;208m│\x1b[0m                \x1b[1;38;5;219mhttps://oomol.com/\x1b[0m                \x1b[38;5;208m│\x1b[0m\n\
+    \x1b[38;5;208m└──────────────────────────────────────────────────┘\x1b[0m\n";
 
 #[derive(Parser, Debug)]
 #[command(
@@ -55,7 +58,7 @@ pub enum Commands {
     },
 
     // 卸载指定版本
-    #[command(name = "uninstall", alias = "u", about = "uninstall specified version")]
+    #[command(name = "uninstall", alias = "un", about = "uninstall specified version")]
     Uninstall {
         // 版本号
         version: String,
